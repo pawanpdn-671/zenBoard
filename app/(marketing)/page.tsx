@@ -35,7 +35,7 @@ const MarketingPage = () => {
 				works in unique - accomplish it all with ZenBoard.
 			</div>
 			<Button className="mt-6" size="lg" asChild>
-				<Link href="#">Get ZenBoard for free</Link>
+				<Link href="/sign-up">Get ZenBoard for free</Link>
 			</Button>
 		</div>
 	);
