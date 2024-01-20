@@ -12,6 +12,7 @@ interface InfoProps {
 export const Info = ({ isPro }: InfoProps) => {
 	const { organization, isLoaded } = useOrganization();
 
+	console.log(organization, isLoaded);
 	if (!isLoaded) {
 		return <Info.Skeleton />;
 	}

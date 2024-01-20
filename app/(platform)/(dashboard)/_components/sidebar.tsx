@@ -1,12 +1,11 @@
 "use client";
-import Link from "next/link";
-import { Plus } from "lucide-react";
-import { useLocalStorage } from "usehooks-ts";
-import { useOrganization, useOrganizationList } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
 import { Accordion } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Separator } from "@/components/ui/separator";
+import { useOrganization, useOrganizationList } from "@clerk/nextjs";
+import { Plus } from "lucide-react";
+import Link from "next/link";
+import { useLocalStorage } from "usehooks-ts";
 import { NavItem, OrganizationType } from "./nav-item";
 
 interface SidebarProps {
