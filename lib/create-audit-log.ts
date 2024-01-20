@@ -17,7 +17,9 @@ export const createAuditLog = async (props: Props) => {
 		if (!user || !orgId) {
 			throw new Error("User not found!");
 		}
+		console.log(user);
 
+		const userEmail = user?.emailAddresses[0]?.emailAddress;
 		const { entityId, action, entityTitle, entityType } = props;
 
 		await db.auditLog.create({
@@ -29,7 +31,8 @@ export const createAuditLog = async (props: Props) => {
 				action,
 				userId: user.id,
 				userImage: user?.imageUrl,
-				userName: user?.firstName + " " + user?.lastName,
+				userName: user.firstName ? user?.firstName + " " + user?.lastName : userEmail.split("@")[0],
+				userEmail: userEmail,
 			},
 		});
 	} catch (error) {
